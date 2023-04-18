@@ -1,0 +1,12 @@
+// import { v4 as generateId } from "uuid";
+
+module.exports = [
+  {
+    id: generateId(),
+    transaction_name: "",
+    amount: "",
+    date: "",
+    from: "",
+    category: "",
+  },
+];
