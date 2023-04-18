@@ -6,7 +6,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send(`taylor set up your deployment.`);
+  res.send(`Welcome to Budget App! For Docs, please visit <`);
 
   app.use("/transactions, transactionController");
 });

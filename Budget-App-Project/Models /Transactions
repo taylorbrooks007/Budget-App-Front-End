@@ -2,11 +2,11 @@
 
 module.exports = [
   {
-    id: generateId(),
-    transaction_name: "",
-    amount: "",
-    date: "",
-    from: "",
-    category: "",
+    id: 1,
+    transaction_name: "Clothing",
+    amount: 25,
+    date: "9/29/2023",
+    from: "Target",
+    category: "Expense",
   },
 ];
