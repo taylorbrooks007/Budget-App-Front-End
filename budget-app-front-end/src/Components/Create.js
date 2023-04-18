@@ -1,12 +1,20 @@
 import { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 export default function Create() {
   const [user, setUser] = useState({
-    name: "",
+    id: uuidv4,
+    transaction_name: "",
     amount: "",
     date: "",
     from: "",
     category: "",
   });
+
+  const [submitStatus, setSubmitStatus] = useState("");
+  const API = process.env.REACT_APP_API_URL;
+  const navigate = useNavigate();
 
   function handleTextChange(event) {
     setUser({
@@ -14,10 +22,18 @@ export default function Create() {
       [event.target.id]: event.target.value,
     });
   }
-  function handleSubmit(event) {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(user);
-  }
+    axios
+      .post(`${API}/transactions`, userInput)
+      .then((response) => {
+        setSubmitStatus(response.data);
+        navigate("/transactions");
+      })
+      .catch((error) => {
+        setSubmitStatus("error");
+      });
+  };
 
   return (
     <div>

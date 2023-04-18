@@ -11,7 +11,13 @@ export default function NavBar() {
     <div style={mystyle}>
       <h1>Budget App</h1>
       <button>
-        <Link to="/transactions">Create New Transaction</Link>
+        <Link to="/">Home</Link>
+      </button>
+      <button>
+        <Link to="/transactions/">View All Transactions</Link>
+      </button>
+      <button>
+        <Link to="/transactions/new">Create New Transaction</Link>
       </button>
     </div>
   );
