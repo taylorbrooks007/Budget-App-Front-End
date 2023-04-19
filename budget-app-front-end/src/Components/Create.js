@@ -12,7 +12,6 @@ export default function Create() {
     category: "",
   });
 
-  const [submitStatus, setSubmitStatus] = useState("");
   const API = process.env.REACT_APP_API_URL;
   const navigate = useNavigate();
 
@@ -25,13 +24,13 @@ export default function Create() {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .post(`${API}/transactions`, userInput)
+      .post(`${API}/transactions`, user)
       .then((response) => {
-        setSubmitStatus(response.data);
+        // setSubmitStatus(response.data);
         navigate("/transactions");
       })
       .catch((error) => {
-        setSubmitStatus("error");
+        // setSubmitStatus("error");
       });
   };
 

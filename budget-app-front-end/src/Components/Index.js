@@ -2,7 +2,7 @@
 export default function Index() {
   return (
     <div>
-      <h1>Bank Account Total : </h1>
+      .<h1>Bank Account Total : </h1>
     </div>
   );
 }
