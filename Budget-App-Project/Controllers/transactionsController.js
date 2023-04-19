@@ -9,6 +9,7 @@ transactions.get("/", (req, res) => {
 });
 
 // GET (read individual resource)
+// this gives entire array, refine to specific id (check for strict equiv)
 transactions.get("/:id", (req, res) => {
   res.json(transactionsArray);
 });
